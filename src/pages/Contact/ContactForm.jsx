@@ -19,7 +19,7 @@ const ContactForm = () => {
                 </div>
                 <div className='mb-3'>
                     <label htmlFor="text-area" className='font-semibold'>YOUR MESSAGE (OPTIONAL)</label>
-                    <textarea id='text-area' className="textarea textarea-success w-full mt-3" placeholder="Enter Your Message..."></textarea>
+                    <textarea id='text-area' className="textarea textarea-success w-full mt-3 rounded-none" placeholder="Enter Your Message..."></textarea>
                 </div>
                 <button className='w-full py-4 bg-base-300 shadow font-bold hover:bg-[#0ba13b] hover:text-white'>Submit</button>
             </form>
