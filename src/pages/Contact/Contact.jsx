@@ -1,11 +1,14 @@
 import React from 'react';
+import ContactBanner from './ContactBanner';
+import ContactForm from './ContactForm';
 
 const Contact = () => {
     return (
-        <div>
-                <h1>contact with us</h1>
+        <div className='mt-20 lg:mt-36'>
+            <ContactBanner/>
+            <ContactForm/>
         </div>
     );
 };
 
-export default Contact;
+export default Contact; 
