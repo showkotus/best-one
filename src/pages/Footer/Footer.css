@@ -2,6 +2,7 @@
     background-image: url("../../assets/home_assets/footer.png");
     background-repeat: no-repeat;
     background-size: cover;
+    background-attachment: fixed;
 }
 
 .custome-footer a{

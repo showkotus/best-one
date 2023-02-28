@@ -3,7 +3,7 @@ import views from '../../assets/home_assets/views_total.png'
 import './Footer.css'
 const Footer = () => {
     return (
-        <footer className="footer w-full p-10 bg-[#0ba13b] text-neutral-content custome-footer rounded-lg">
+        <footer className="footer w-full p-10 bg-[#0ba13b] text-neutral-content custome-footer rounded-lg mb-10">
             <div>
                 <span className="text-2xl font-bold">ADDRESS</span>
                 <a>
