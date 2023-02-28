@@ -8,24 +8,24 @@ import Home from "./pages/home/Home"
 function App() {
   const router = createBrowserRouter([
     {
-      path:'/',
-      element:<Mainlayout></Mainlayout>,
-      children:[
+      path: '/',
+      element: <Mainlayout></Mainlayout>,
+      children: [
         {
-          path:'/',
-          element:<Home></Home>
+          path: '/',
+          element: <Home></Home>
         },
         {
-          path:'/about',
-          element:<About></About>
+          path: '/about',
+          element: <About></About>
         },
         {
-          path:'/contact',
-          element:<Contact></Contact>
+          path: '/contact',
+          element: <Contact></Contact>
         },
         {
-          path:'/blog',
-          element:<Blog></Blog>
+          path: '/blog',
+          element: <Blog></Blog>
         }
       ]
     }

@@ -1,0 +1,11 @@
+.custome-footer{
+    background-image: url("../../assets/home_assets/footer.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.custome-footer a{
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 600;
+}

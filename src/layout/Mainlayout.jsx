@@ -5,7 +5,7 @@ import Navbar from '../pages/Navbar/Navbar';
 
 const Mainlayout = () => {
     return (
-        <div>
+        <div className='px-10'>
             <Navbar></Navbar>
             <Outlet></Outlet>
             <Footer></Footer>
