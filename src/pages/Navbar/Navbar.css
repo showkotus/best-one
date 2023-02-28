@@ -1,0 +1,31 @@
+.custom-navbar{
+    z-index: 10;
+}
+.custom-navbar a{
+    font-weight: 500;
+    transition: all ease-in-out .3s;
+}
+.custom-navbar a:hover{
+    color: #71b100!important;
+}
+.custom-navbar a:hover{
+    background-color: white !important;
+}
+.drop_menu{
+    margin-left: -30px;
+    border-top: 3px solid rgb(4, 4, 58);
+    border-radius: 0px !important;
+    padding: 0 !important;
+    z-index: 10!important;
+}
+.drop_menu li a {
+    font-size: .8rem;
+    border-radius: 0px !important;
+    margin: .2rem 0;
+    transition: all ease-in-out .3s;
+}
+
+.drop_menu li a:hover{
+    background-color: #44d89e!important;
+    color: white !important;
+}
