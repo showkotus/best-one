@@ -20,7 +20,6 @@ const Footer = () => {
             <div>
                 <span className="text-2xl font-bold">PHONE</span>
                 <a>+88-02-51040138</a>
-                <a className="flex"><img className='w-[15px] mr-2' src={views} alt="" /> Total views : 2798</a>
             </div>
         </footer>
     );
