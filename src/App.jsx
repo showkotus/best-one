@@ -4,6 +4,7 @@ import About from "./pages/About/About"
 import Blog from "./pages/Blogs/Blog"
 import Home from "./pages/home/Home"
 import Contact from './pages/Contact/Contact'
+import Shop from "./pages/Shop/Shop"
 function App() {
   const router = createBrowserRouter([
     {
@@ -25,6 +26,10 @@ function App() {
         {
           path: '/blog',
           element: <Blog></Blog>
+        },
+        {
+          path:'/shop',
+          element:<Shop></Shop>
         }
       ]
     }
