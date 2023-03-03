@@ -3,3 +3,11 @@
     font-size: 1.2rem;
     font-weight: 600;
 }
+
+.scrl-top{
+    background-color: rgba(0, 0, 0, 0.8);
+}
+.scrl-top svg{
+    fill: white;
+    font-weight: 600;
+}

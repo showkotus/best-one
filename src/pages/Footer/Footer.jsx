@@ -1,4 +1,5 @@
 import React from 'react';
+import ScrollToTop from 'react-scroll-to-top';
 import views from '../../assets/home_assets/views_total.png'
 import './Footer.css'
 const Footer = () => {
@@ -20,6 +21,7 @@ const Footer = () => {
             <div>
                 <span className="text-2xl font-bold">PHONE</span>
                 <a>+88-02-51040138</a>
+                <ScrollToTop smooth className='grid place-items-center scrl-top'></ScrollToTop>
             </div>
         </footer>
     );
