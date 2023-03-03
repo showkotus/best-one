@@ -5,6 +5,10 @@ import Blog from "./pages/Blogs/Blog"
 import Home from "./pages/home/Home"
 import Contact from './pages/Contact/Contact'
 import Shop from "./pages/Shop/Shop"
+import Seasonings from "./pages/products/Seasonings/Seasonings"
+import CasingPro from "./pages/products/CasingPro/CasingPro"
+import StarterPro from "./pages/products/StarterPro/StarterPro"
+import BakeryCake from "./pages/products/BakeryCake/BakeryCake"
 function App() {
   const router = createBrowserRouter([
     {
@@ -30,6 +34,22 @@ function App() {
         {
           path:'/shop',
           element:<Shop></Shop>
+        },
+        {
+          path:'/seasonings',
+          element:<Seasonings></Seasonings>
+        },
+        {
+          path:'/casing',
+          element:<CasingPro></CasingPro>
+        },
+        {
+          path:'/starter',
+          element:<StarterPro></StarterPro>
+        },
+        {
+          path:'/bekary',
+          element:<BakeryCake></BakeryCake>
         }
       ]
     }
