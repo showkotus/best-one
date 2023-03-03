@@ -1,9 +1,13 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import ShopBanner from './ShopBanner';
 
 const Shop = () => {
     return (
         <div>
+            <Helmet>
+                <title>Shop | Best One</title>
+            </Helmet>
             <ShopBanner></ShopBanner>
             {/* shop sorting option part */}
             <div>
