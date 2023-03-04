@@ -9,6 +9,8 @@ import Seasonings from "./pages/products/Seasonings/Seasonings"
 import CasingPro from "./pages/products/CasingPro/CasingPro"
 import StarterPro from "./pages/products/StarterPro/StarterPro"
 import BakeryCake from "./pages/products/BakeryCake/BakeryCake"
+import SingleProduct from "./components/SingleProduct/SingleProduct"
+import Cart from "./pages/Cart/Cart"
 function App() {
   const router = createBrowserRouter([
     {
@@ -50,6 +52,14 @@ function App() {
         {
           path:'/bekary',
           element:<BakeryCake></BakeryCake>
+        },
+        {
+          path:'/product/:productId',
+          element:<SingleProduct></SingleProduct>
+        },
+        {
+          path:'/cart',
+          element:<Cart></Cart>
         }
       ]
     }
