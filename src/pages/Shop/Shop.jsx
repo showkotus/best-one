@@ -34,7 +34,7 @@ const Shop = () => {
                 <div className='btn-group'>
                     {
                         pages &&
-                        [...Array(pages).keys()].map(num => <button className={`btn ${page === num ? 'btn-active':''}`} key={num} onClick={() => setPage(num)}>{num + 1}</button>)
+                        [...Array(pages).keys()].map(num => <button className={`btn bg-[#0BA13B] ${page === num ? 'btn-active':''}`} key={num} onClick={() => setPage(num)}>{num + 1}</button>)
                     }
                 </div>
             </div>
