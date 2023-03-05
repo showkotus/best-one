@@ -11,6 +11,7 @@ import StarterPro from "./pages/products/StarterPro/StarterPro"
 import BakeryCake from "./pages/products/BakeryCake/BakeryCake"
 import SingleProduct from "./components/SingleProduct/SingleProduct"
 import Cart from "./pages/Cart/Cart"
+import { Toaster } from "react-hot-toast"
 function App() {
   const router = createBrowserRouter([
     {
@@ -66,6 +67,7 @@ function App() {
   ])
   return (
     <RouterProvider router={router}>
+      <Toaster></Toaster>
     </RouterProvider>
   )
 }

@@ -3,6 +3,7 @@ import { PhotoProvider, PhotoView } from 'react-photo-view';
 import { useLocation } from 'react-router-dom';
 import Button from '../Button/Button';
 import { CartContext } from '../../context/CartContextProvider';
+import { toast } from 'react-hot-toast';
 const SingleProduct = () => {
     const location = useLocation()
     const [measure, setMeasure] = useState(1)
@@ -19,9 +20,9 @@ const SingleProduct = () => {
         }
         const newCart = [...cart, product]
         setCart(newCart)
-        
+        toast.success("Product is add to cart")
     }
- 
+
     return (
         <div className='m-20 md:mt-36'>
             <div className='grid grid-cols-1 md:grid-cols-2 gap-4 p-6 place-items-center'>
