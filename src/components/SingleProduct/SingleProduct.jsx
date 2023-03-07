@@ -10,13 +10,14 @@ const SingleProduct = () => {
     const [quantity, setQuantity] = useState(1)
     const {cart, setCart} = useContext(CartContext)
     const product = location.state
-    const { name, img, price, id } = product
-    const totalPrice = measure * quantity * price
+    const { name, img, price, _id } = product
+    const subtotal = measure * quantity * 100
+    const total = measure * 100
     // handle add to cart 
     const handleAddtoCart = event =>{
         event.preventDefault()
         const product = {
-            name, img, measure, quantity,id, totalPrice
+            name, img, measure, quantity,_id, subtotal, total
         }
         const newCart = [...cart, product]
         setCart(newCart)
@@ -46,7 +47,7 @@ const SingleProduct = () => {
                         <input onChange={e => setQuantity(e.target.value)} name='quantity' type="number" defaultValue={1} className='w-[60px] h-[60px] border border-[#0BA13B] p-3 mt-4 mr-4 outline-none' />
                         <button type='submit'><Button>Add To Cart</Button></button>
                     </form>
-                    <p className='mt-2 font-semibold uppercase text-gray-400'><strong>Total Price:</strong> {totalPrice}</p>
+                    <p className='mt-2 font-semibold uppercase text-gray-400'><strong>Total Price:</strong> {subtotal}</p>
                 </div>
             </div>
         </div>

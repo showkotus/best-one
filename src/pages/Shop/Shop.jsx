@@ -11,7 +11,7 @@ const Shop = () => {
     const pages = Math.ceil(products.length / 12)
     // const url = http://localhost:5000/alldata?page=${page}&size=12
     useEffect(() => {
-        fetch(`products.json`)
+        fetch(`allproducts.json`)
             .then(res => res.json())
             .then(data => setProducts(data))
     }, [page])
