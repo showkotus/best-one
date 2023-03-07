@@ -1,16 +1,38 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { CartContext } from '../../context/CartContextProvider';
 import { ImCross } from 'react-icons/im'
 import { toast } from 'react-hot-toast';
+import { TbCurrencyTaka } from 'react-icons/tb'
+import { Link } from 'react-router-dom';
 const Cart = () => {
-    const { cart, setCart } = useContext(CartContext)
+    const { cart, setCart,countries, setCountries } = useContext(CartContext)
+    const [cityName, setCityName] = useState('Dhaka')
+    const [zipcode, setZipcode] = useState('')
+    const [hiddenForm, setHiddenForm] = useState(false)
     const handleDelete = product => {
-        const newCart = cart.filter(prod => (prod.id && prod.subtotal) !== (product.id && product.subtotal))
+        const newCart = cart.filter(prod => (prod._id && prod.subtotal) !== (product._id && product.subtotal))
         console.log(cart.length)
         setCart([...newCart])
         toast.success("Item deleted from the cart!!")
     }
-    console.log(cart)
+    let sum = 0
+    cart.forEach(prod => {
+        sum += prod.subtotal
+    })
+
+    useEffect(() => {
+        fetch('https://restcountries.com/v2/all')
+            .then(res => res.json())
+            .then(data => setCountries(data))
+    }, [])
+
+    const handleChangeAdreess = (event) => {
+        event.preventDefault()
+        const form = event.target
+        setCityName(form.cityname.value)
+        setZipcode(form.passcode.value)
+        setHiddenForm(false)
+    }
     return (
         <div className='mt-20 md:mt-36 md:w-4/5 mx-auto'>
             {
@@ -48,12 +70,12 @@ const Cart = () => {
                                                 </div>
                                             </td>
                                             <td>
-                                                {crtPro.measure * 100}
+                                                {crtPro.total} <TbCurrencyTaka className='inline' size={24} />
                                             </td>
                                             <td>{crtPro.quantity}</td>
-                                            <th>
-                                                <button className="btn btn-ghost btn-xs">{crtPro.subtotal}</button>
-                                            </th>
+                                            <td>
+                                                {crtPro.subtotal}.00 <TbCurrencyTaka className='inline' size={24} />
+                                            </td>
                                         </tr>)
                                     }
                                 </tbody>
@@ -66,42 +88,41 @@ const Cart = () => {
 
             <div>
                 <h1 className='text-2xl font-semibold mb-3'>Cart Totals</h1>
-                <table border={1} className="my-10">
+                <table border={1} className="my-10 w-full">
                     <tr className='border'>
                         <th className='p-3 text-gray-400 text-left'>Subtotal</th>
-                        <td>Price</td>
+                        <td>{sum}.00<TbCurrencyTaka className='inline' size={24} /></td>
                     </tr>
                     <tr className='border'>
                         <th className='p-3 text-gray-400 text-left'>Shipping</th>
                         <td>
                             <p>Free Shipping</p>
-                            <p>Shipping to dhaka</p>
-                            <p>change adreess</p>
-                            <form className='w-[300px] bg-black'>
-                                <select className="select select-bordered w-full max-w-xs">
-                                    <option disabled selected>Who shot first?</option>
-                                    <option>Han Solo</option>
-                                    <option>Greedo</option>
+                            <p>Shipping to <span className='text-gray-500 font-semibold'>{cityName}, {zipcode}</span></p>
+                            <p onClick={() => setHiddenForm(!hiddenForm)} className='cursor-pointer font-semibold'>change adreess</p>
+                            <form onSubmit={handleChangeAdreess} className={`w-[200px] p-5 ${hiddenForm ? '' : 'hidden'}`}>
+                                <select className="select select-bordered w-full max-w-xs mb-3 bg-gray-200">
+                                    <option disabled selected>Select a country or region</option>
+                                    {
+                                        countries.map((country, index) => <option key={index}>{country.name}</option>)
+                                    }
                                 </select>
-                                <select className="select select-bordered w-full max-w-xs">
-                                    <option disabled selected>Who shot first?</option>
-                                    <option>Han Solo</option>
-                                    <option>Greedo</option>
-                                </select>
-                                <input type="text" placeholder="Type here" className="input w-full max-w-xs" />
-                                <input type="text" placeholder="Type here" className="input w-full max-w-xs" />
+                                <input name='cityname' type="text" placeholder="City" className="input w-full max-w-xs mb-3 bg-gray-200" required />
+                                <input name='passcode' type="text" placeholder="Passcode/ZIP" className="input w-full max-w-xs mb-3 bg-gray-200" required />
                                 <br />
-                                <button type='submit'>Update</button>
+                                <button type='submit' className='px-8 py-4 font-semibold text-xl border-2 border-[#0BA13B] mb-3 hover:text-[#0BA13B] hover:bg-gray-100 hover:border-gray-100'>Update</button>
                             </form>
                         </td>
                     </tr>
                     <tr className='border'>
                         <th className='p-3 text-gray-400 text-left'>Total</th>
-                        <td>total price</td>
+                        <td>{sum}.00  <TbCurrencyTaka className='inline' size={24} /></td>
                     </tr>
                 </table>
                 <div className='flex items-center'>
-                    <button className='px-8 py-4 font-semibold text-xl border-2 border-[#0BA13B] mb-3 hover:text-[#0BA13B] hover:bg-gray-100 hover:border-gray-100'>Procceed To Checkout</button>
+                    <Link to={'/checkout'}>
+                        <button className='px-8 py-4 font-semibold text-xl border-2 border-[#0BA13B] mb-3 hover:text-[#0BA13B] hover:bg-gray-100 hover:border-gray-100'>Procceed To Checkout</button>
+                    </Link>
+
                 </div>
             </div>
         </div>

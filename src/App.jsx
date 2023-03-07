@@ -12,6 +12,7 @@ import BakeryCake from "./pages/products/BakeryCake/BakeryCake"
 import SingleProduct from "./components/SingleProduct/SingleProduct"
 import Cart from "./pages/Cart/Cart"
 import { Toaster } from "react-hot-toast"
+import Checkout from "./pages/Checkout/Checkout"
 function App() {
   const router = createBrowserRouter([
     {
@@ -61,6 +62,10 @@ function App() {
         {
           path:'/cart',
           element:<Cart></Cart>
+        },
+        {
+          path:'/checkout',
+          element:<Checkout></Checkout>
         }
       ]
     }

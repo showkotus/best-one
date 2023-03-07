@@ -1,7 +1,7 @@
 import React, { createContext, useEffect, useState } from 'react';
 export const CartContext = createContext([])
 const CartContextProvider = ({children}) => {
-    
+    const [countries, setCountries] = useState([])
     const getLocalCartData = () =>{
         let storedCart = localStorage.getItem('CART')
         if(storedCart){
@@ -16,7 +16,7 @@ const CartContextProvider = ({children}) => {
     useEffect(() =>{
         localStorage.setItem('CART', JSON.stringify(cart))
     } ,[cart])
-    const value = {cart, setCart}
+    const value = {cart, setCart,countries, setCountries}
     return (
         <CartContext.Provider value={value}>
             {children}

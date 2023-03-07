@@ -1,11 +1,12 @@
 import { useContext, useState } from 'react';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import Button from '../Button/Button';
 import { CartContext } from '../../context/CartContextProvider';
 import { toast } from 'react-hot-toast';
 const SingleProduct = () => {
     const location = useLocation()
+    const navigate = useNavigate()
     const [measure, setMeasure] = useState(1)
     const [quantity, setQuantity] = useState(1)
     const {cart, setCart} = useContext(CartContext)
@@ -22,6 +23,7 @@ const SingleProduct = () => {
         const newCart = [...cart, product]
         setCart(newCart)
         toast.success("Product is add to cart")
+        navigate('/cart')
     }
 
     return (
