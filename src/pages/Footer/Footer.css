@@ -4,10 +4,10 @@
     font-weight: 600;
 }
 
-.scrl-top{
-    background-color: rgba(0, 0, 0, 0.8);
+.custome-footer .scrl-top{
+    background-color: rgba(0, 0, 0, 0.8)!important;
 }
-.scrl-top svg{
-    fill: white;
+.custome-footer .scrl-top svg{
+    fill: white!important;
     font-weight: 600;
 }

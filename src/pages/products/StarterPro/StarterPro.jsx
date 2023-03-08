@@ -1,18 +1,32 @@
 import React, { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet';
 import DisplayProducts from '../../../components/DisplayProducts/DisplayProducts';
-
+import { ThreeCircles } from 'react-loader-spinner'
 const StarterPro = () => {
     const [products, setProducts] = useState([])
+    const [loading, setLoading] = useState(true)
     useEffect(() =>{
         fetch('allproducts.json')
         .then(res => res.json())
         .then(data => setProducts(data))
+        setLoading(false)
     } ,[])
-
-    const [starterProd, setStarterProd] = useState([])
-    const allStarter = products.filter(prod => prod.cat1 == 'starter culture & rennet')
-    console.log(allStarter)
+    if (loading) {
+        return <div className='mt-20 md:mt-36 min-h-screen w-full grid place-items-center'>
+            <ThreeCircles
+                height="100"
+                width="100"
+                color="#4fa94d"
+                wrapperStyle={{}}
+                wrapperClass=""
+                visible={true}
+                ariaLabel="three-circles-rotating"
+                outerCircleColor=""
+                innerCircleColor=""
+                middleCircleColor=""
+            />
+        </div>
+    }
     return (
         <div className='mt-20 md:mt-36'>
             <Helmet>

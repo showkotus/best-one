@@ -5,7 +5,7 @@ import { toast } from 'react-hot-toast';
 import { TbCurrencyTaka } from 'react-icons/tb'
 import { Link } from 'react-router-dom';
 const Cart = () => {
-    const { cart, setCart,countries, setCountries } = useContext(CartContext)
+    const { cart, setCart, countries, setCountries } = useContext(CartContext)
     const [cityName, setCityName] = useState('Dhaka')
     const [zipcode, setZipcode] = useState('')
     const [hiddenForm, setHiddenForm] = useState(false)
@@ -40,7 +40,7 @@ const Cart = () => {
                     <>
                         <h1 className='mt-20 text-center font-bold uppercase text-xl text-[#0BA13B]'>Your All Products</h1>
                         <div className="overflow-x-auto w-full">
-                            <table className="table w-full p-4 my-12">
+                            <table className="table w-full p-4 my-12 shadow">
                                 <thead>
                                     <tr>
                                         <th className='bg-[#0BA13B] text-white'></th>
@@ -86,7 +86,7 @@ const Cart = () => {
                     <h1 className='my-24 text-center font-bold uppercase text-xl text-[#0BA13B]'>You have not added any product in your cart.</h1>
             }
 
-            <div>
+            {cart.length>0 && <div>
                 <h1 className='text-2xl font-semibold mb-3'>Cart Totals</h1>
                 <table border={1} className="my-10 w-full">
                     <tr className='border'>
@@ -124,7 +124,7 @@ const Cart = () => {
                     </Link>
 
                 </div>
-            </div>
+            </div>}
         </div>
     );
 };
