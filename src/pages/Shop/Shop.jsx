@@ -9,6 +9,7 @@ const Shop = () => {
     const [loading, setLoading] = useState(true)
     const [cat, setCat] = useState('')
     const [page, setPage] = useState(0)
+    // const [currentPage, setCurrentPage] = useState(1)
     const pages = Math.ceil(filteringProduct.length / 12)
     let lastpage = page * 12 + 12
     if (lastpage >= filteringProduct.length) {
@@ -33,13 +34,28 @@ const Shop = () => {
         setFilteringProduct(newProducts)
         setCat(selectedCat)
         setPage(0)
-        console.log('inside of function:', newProducts.length)
     }
-    console.log('outside of function', filteringProduct.length)
     const handleReset = () => {
         setCat('')
         setFilteringProduct(products)
     }
+    const getNextNum = () =>{
+        if(page >=(pages - 1)){
+            setPage(pages - 1)
+        }
+        else{
+            setPage(page + 1)
+        }
+    }
+    const getPrevNum = () =>{
+        if(page <= 0){
+            setPage(0)
+        }
+        else{
+            setPage(page - 1)
+        }
+    }
+
     if (loading) {
         return <div className='mt-20 md:mt-36 min-h-screen w-full grid place-items-center'>
             <ThreeCircles
@@ -98,11 +114,16 @@ const Shop = () => {
                 }
             </div>
             <div className='text-center mb-5'>
-                <div className='btn-group'>
+                {/* <div className='btn-group'>
                     {
                         pages &&
                         [...Array(pages).keys()].map(num => <button className={`btn bg-[#0BA13B] ${page === num ? 'btn-active' : ''}`} key={num} onClick={() => setPage(num)}>{num + 1}</button>)
                     }
+                </div> */}
+                <div className='flex items-center justify-center my-4'>
+                    <button className='px-6 py-3 bg-[#0BA13B] font-bold text-white' onClick={() => getPrevNum()}>PREV</button>
+                    <p className='font-bold text-gray-600 mx-4'>{page + 1} of {pages}</p>
+                    <button className='px-6 py-3 bg-[#0BA13B] font-bold text-white' onClick={() => getNextNum()}>NEXT</button>
                 </div>
             </div>
         </div>
