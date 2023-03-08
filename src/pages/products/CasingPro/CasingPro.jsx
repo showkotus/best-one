@@ -14,7 +14,7 @@ const CasingPro = () => {
             <Helmet>
                 <title>Casings Solutions | Best One</title>
             </Helmet>
-            <h1 className='text-center my-8 font-semibold uppercase text-xl text-[#0BA13B]'>CASINGS SOLUTIONS</h1>
+            <h1 className='text-center my-8 font-semibold uppercase text-2xl text-[#0BA13B]'>CASINGS SOLUTIONS</h1>
             <div className='my-4'>
                 <h2 className='my-2 font-semibold text-gray-500 p-5 inline'>FOR CASINGS PRODUCTS</h2>
                 <ul className='text-gray-400 font-semibold p-4 list-disc'>

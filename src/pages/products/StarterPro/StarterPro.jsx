@@ -18,7 +18,7 @@ const StarterPro = () => {
             <Helmet>
                 <title>Starter Cultures & Rennet | Best One</title>
             </Helmet>
-            <h1 className='text-center my-8 font-semibold uppercase text-xl text-[#0BA13B]'>STARTER CULTURES & RENNET</h1>
+            <h1 className='text-center my-8 font-semibold uppercase text-2xl text-[#0BA13B]'>STARTER CULTURES & RENNET</h1>
             <div className='my-4'>
                 <h2 className='my-2 font-semibold text-gray-500 p-5 inline'>FOR SET, STIRRED & DRINKABLE YOGURTS & CHEESES AND PROBIOTICS & AGROVET</h2>
                 <ul className='text-gray-400 font-semibold p-4 list-disc'>
@@ -34,7 +34,7 @@ const StarterPro = () => {
                     <li>Agro vet Cultures for Poultry, Cattles & Plant</li>
                 </ul>
             </div>
-            <div className='grid gap-10 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 my-4'>
+            <div className='grid gap-10 grid-cols-1 md:grid-cols-2 lg:grid-cols-4 my-4'>
                 {
                     products.length > 0 &&
                     products.filter(prod => prod.cat1 == 'starter culture & rennet').map(prod =><DisplayProducts product = {prod}></DisplayProducts>)

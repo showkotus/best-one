@@ -23,7 +23,7 @@ const Shop = () => {
             <div className='mt-8 px-4'>
                 <p className='font-semibold text-gray-500'>Showing {page * 12 + 1}-{page * 12 + 12} of {products.length} results</p>
             </div>
-            <div className='p-4 grid gap-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
+            <div className='p-4 grid gap-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-4'>
                 {
                     products &&
                     products.slice(page *12, page * 12 + 12).map(product => <DisplayProducts key={product._id} product={product}></DisplayProducts>)

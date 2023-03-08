@@ -132,7 +132,7 @@ const Checkout = () => {
                     </from>
                 </div>
             </div>
-            <div className='my-3'>
+            <div className='my-3 text-gray-500 font-semibold'>
                 <h1 className='font-bold text-xl uppercase text-center text-[#0BA13B] mb-4'>Your Order</h1>
                 {
                     <div className="overflow-x-auto">

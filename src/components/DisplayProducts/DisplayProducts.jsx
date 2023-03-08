@@ -1,6 +1,7 @@
 import React from 'react';
 import { GrAddCircle } from 'react-icons/gr'
 import { Link, useLocation } from 'react-router-dom';
+import { TbCurrencyTaka } from 'react-icons/tb';
 const DisplayProducts = ({ product }) => {
     const { name, img, price, _id } = product
     return (
@@ -14,10 +15,10 @@ const DisplayProducts = ({ product }) => {
                 </Link>
             </div>
             <div className="card-body">
-                <h2 className="card-title text-sm">{name.slice(0, 20)}</h2>
+                <h2 className="card-title font-semibold">{name}</h2>
                 {/* <p>If a dog chews shoes whose shoes does he choose?</p> */}
                 <div className="card-actions justify-center">
-                    <p><strong>Price:</strong>{price}</p>
+                    <p className='text-xl'><strong>Price:</strong>100.00<TbCurrencyTaka className='inline' size={24} /> - 2000.00<TbCurrencyTaka className='inline' size={24} /></p>
                 </div>
             </div>
         </div>
