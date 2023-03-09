@@ -29,3 +29,7 @@
     background-color: #44d89e!important;
     color: white !important;
 }
+
+.list-item li{
+    font-size: .8rem;
+}

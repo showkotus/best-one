@@ -1,0 +1,17 @@
+.custom_produts_banner{
+    background-image: url('../../assets/productsBanner.jpg');
+    height: 100%;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 10px;
+}
+
+.products_banner_inner{
+    height: 100%;
+    width: 100%;
+    display: grid;
+    place-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+}

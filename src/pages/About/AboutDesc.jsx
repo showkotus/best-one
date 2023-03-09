@@ -18,7 +18,7 @@ const AboutDesc = () => {
                     <p className='font-medium text-white'><AiFillCheckSquare size={22} className="inline text-[#0ba13b] mr-2"/> <span>Foreign Food Technologists Supports</span></p>
                     <p className='font-medium text-white'><AiFillCheckSquare size={22} className="inline text-[#0ba13b] mr-2"/> <span>Food Machinery, Attachments & Accessory Supports</span></p>
                 </div>
-                <img className='w-full h-[400px]' src={about} alt="" />
+                <img className='w-full h-[400px] hidden md:flex' src={about} alt="" />
             </div>
         </div>
     );

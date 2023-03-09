@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet';
 import DisplayProducts from '../../../components/DisplayProducts/DisplayProducts';
 import { ThreeCircles } from 'react-loader-spinner'
+import ProductsBanner from '../../../components/ProductsBanner/ProductsBanner';
 const BakeryCake = () => {
     const [products, setProducts] = useState([])
     const [loading, setLoading] = useState(true)
@@ -9,7 +10,7 @@ const BakeryCake = () => {
         fetch("allproducts.json")
             .then(res => res.json())
             .then(data => setProducts(data))
-            setLoading(false)
+        setLoading(false)
     }, [])
 
     if (loading) {
@@ -34,18 +35,23 @@ const BakeryCake = () => {
                 <title>Bakery & Cake Solutions | Best One</title>
             </Helmet>
             <h1 className='text-center my-8 font-semibold uppercase text-2xl text-[#0BA13B]'>BAKERY & CAKE SOLUTIONS</h1>
-            <div className='my-4'>
-                <h2 className='my-2 font-semibold text-gray-500 p-5 inline'>FOR BAKERY & CAKE PRODUCTS</h2>
-                <ul className='text-gray-400 font-semibold p-4 list-disc'>
-                    <li>Premixes for breads and rolls</li>
-                    <li>Premixes for cakes and sponges</li>
-                    <li>Cremes / Custard cremes</li>
-                    <li>Convenience products</li>
-                    <li>Dough improvers</li>
-                    <li>Release agents</li>
-                    <li>Flours, seeds and flakes for decoration</li>
-                    <li>Service products</li>
-                </ul>
+            <div className='my-4 flex px-8'>
+                <div>
+                    <h2 className='my-2 font-semibold text-gray-500 p-5 inline'>FOR BAKERY & CAKE PRODUCTS</h2>
+                    <ul className='text-gray-400 font-semibold p-4 list-disc'>
+                        <li>Premixes for breads and rolls</li>
+                        <li>Premixes for cakes and sponges</li>
+                        <li>Cremes / Custard cremes</li>
+                        <li>Convenience products</li>
+                        <li>Dough improvers</li>
+                        <li>Release agents</li>
+                        <li>Flours, seeds and flakes for decoration</li>
+                        <li>Service products</li>
+                    </ul>
+                </div>
+                <div className='ml-12 flex-auto hidden md:flex'>
+                    <ProductsBanner text={"Bekary and Cake"}></ProductsBanner>
+                </div>
             </div>
             <div className='my-5'>
                 <h1 className='font-bold text-xl text-gray-500 my-8'>Premixes for breads and rolls</h1>

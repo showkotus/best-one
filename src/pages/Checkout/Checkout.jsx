@@ -152,16 +152,16 @@ const Checkout = () => {
                                     </tr>)
                                 }
                                 <tr>
-                                    <th>Subtotal</th>
-                                    <th>{subTotalPrice}.00 <TbCurrencyTaka className='inline' size={24} /></th>
+                                    <td className='text-gray-400 font-bold'>Subtotal</td>
+                                    <td>{subTotalPrice}.00 <TbCurrencyTaka className='inline' size={24} /></td>
                                 </tr>
                                 <tr>
-                                    <th>Shipping</th>
-                                    <th>free shipping</th>
+                                    <td className='text-gray-400 font-bold'>Shipping</td>
+                                    <td>free shipping</td>
                                 </tr>
                                 <tr>
-                                    <th>Total</th>
-                                    <th>{subTotalPrice}.00 <TbCurrencyTaka className='inline' size={24} /></th>
+                                    <td className='text-gray-400 font-bold'>Total</td>
+                                    <td>{subTotalPrice}.00 <TbCurrencyTaka className='inline' size={24} /></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -170,7 +170,7 @@ const Checkout = () => {
             </div>
             <div className='py-20 px-8 bg-gray-200 shadow rounded'>
                 <p className='text-gray-500'>Cash on delivery</p>
-                <p className='my-3'>Pay with cash upon delivery</p>
+                <p className='my-3 py-4 px-2 bg-gray-300  text-gray-600 rounded'>Pay with cash upon delivery</p>
                 <p className='text-gray-500'>Your personal data will be used to process your order, support your experience throughout this website, and for other purposes described in our privacy policy.</p>
                 <button className='px-8 py-4 font-semibold text-xl border-2 border-[#0BA13B] mt-2 hover:text-[#0BA13B] hover:bg-gray-100 hover:border-gray-100 mx-auto block'>Place Order</button>
             </div>

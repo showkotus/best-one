@@ -27,8 +27,8 @@ const SingleProduct = () => {
     }
 
     return (
-        <div className='m-20 md:mt-36'>
-            <div className='grid grid-cols-1 md:grid-cols-2 gap-4 p-6 place-items-center'>
+        <div className='mt-20 md:mt-36'>
+            <div className='grid grid-cols-1 md:grid-cols-2 gap-4 place-items-center'>
                 <PhotoProvider>
                     <PhotoView src={img}>
                         <img className='rounded-lg cursor-zoom-in' src={img} alt="" />
@@ -46,10 +46,10 @@ const SingleProduct = () => {
                             <option value={15}>15 kg</option>
                             <option value={20}>20 kg</option>
                         </select>
-                        <input onChange={e => setQuantity(e.target.value)} name='quantity' type="number" defaultValue={1} className='w-[60px] h-[60px] border border-[#0BA13B] p-3 mt-4 mr-4 outline-none' />
+                        <input onChange={e => setQuantity(e.target.value)} name='quantity' type="number" defaultValue={1} className='w-[60px] h-[60px] border border-[#0BA13B] p-3 mt-4 mr-4 outline-none' min={1} />
                         <button type='submit'><Button>Add To Cart</Button></button>
                     </form>
-                    <p className='mt-2 font-semibold uppercase text-gray-400'><strong>Total Price:</strong> {subtotal}</p>
+                    <p className='my-2 font-semibold uppercase text-gray-400'><strong>Total Price:</strong> {subtotal}</p>
                 </div>
             </div>
         </div>
