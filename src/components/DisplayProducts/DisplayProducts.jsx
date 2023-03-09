@@ -15,11 +15,9 @@ const DisplayProducts = ({ product }) => {
                 </Link>
             </div>
             <div className="card-body">
-                <h2 className="card-title font-semibold">{name}</h2>
+                <h2 className="card-title font-semibold" style={{marginBottom:'-4px'}}>{name}</h2>
                 {/* <p>If a dog chews shoes whose shoes does he choose?</p> */}
-                <div className="card-actions justify-center">
-                    <p className='text-xl'><strong>Price:</strong>100.00<TbCurrencyTaka className='inline' size={24} /> - 2000.00<TbCurrencyTaka className='inline' size={24} /></p>
-                </div>
+                <p className='text-xl'><strong>Price:</strong>100.00<TbCurrencyTaka className='inline' size={24} /> - 2000.00<TbCurrencyTaka className='inline' size={24} /></p>
             </div>
         </div>
     );
