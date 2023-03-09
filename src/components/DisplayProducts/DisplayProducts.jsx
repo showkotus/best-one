@@ -6,8 +6,8 @@ const DisplayProducts = ({ product }) => {
     const { name, img, price, _id } = product
     return (
         <div className="card card-compact bg-base-100 shadow-xl">
-            <div className='relative'>
-                <figure><img src={img} alt={name} className="h-[250px] w-full rounded-lg" /></figure>
+            <div className='relative p-4'>
+                <figure><img src={img} alt={name} className="h-[200px] w-full rounded-lg" /></figure>
                 <Link to={`/product/${_id}`} state={product}> 
                     <div onClick={() => console.log("hello brother")} className='absolute top-0 left-0 bg-white w-full h-full rounded-lg opacity-0 hover:opacity-90 grid place-items-center cursor-pointer shadow-xl'>
                         <GrAddCircle size={34} />

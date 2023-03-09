@@ -38,7 +38,7 @@ const CasingPro = () => {
                     casings.length > 0 &&
                     casings.map(csnPro => <div className='shadow-lg p-4'>
                         <a href={csnPro.pdf}>
-                            <img className='h-[220px] rounded' src={csnPro.img} alt="" />
+                            <img className='h-[220px] rounded mx-auto block' src={csnPro.img} alt="" />
                             <p className='mt-2 text-gray-500 font-bold'>{csnPro.name}</p>
                         </a>
                     </div>)
