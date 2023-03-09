@@ -29,7 +29,6 @@
     background-color: #44d89e!important;
     color: white !important;
 }
-
-.list-item li{
-    font-size: .8rem;
+.menu_list li a{
+    font-weight: 600 !important;
 }

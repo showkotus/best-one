@@ -14,7 +14,7 @@ const DisplayProducts = ({ product }) => {
                     </div>
                 </Link>
             </div>
-            <div className="card-body">
+            <div className="card-body text-center">
                 <h2 className="card-title font-semibold" style={{marginBottom:'-4px'}}>{name}</h2>
                 {/* <p>If a dog chews shoes whose shoes does he choose?</p> */}
                 <p className='text-xl'><strong>Price:</strong>100.00<TbCurrencyTaka className='inline' size={24} /> - 2000.00<TbCurrencyTaka className='inline' size={24} /></p>
