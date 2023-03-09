@@ -27,7 +27,7 @@ const SingleProduct = () => {
     }
 
     return (
-        <div className='mt-20 md:mt-36'>
+        <div className='mt-20 md:m-20 md:mt-36'>
             <div className='grid grid-cols-1 md:grid-cols-2 gap-4 place-items-center'>
                 <PhotoProvider>
                     <PhotoView src={img}>
